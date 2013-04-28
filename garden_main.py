@@ -1227,11 +1227,11 @@ def new_game_screen():
 							"The Upgrades menu allows you to purchase better tools and improvements",
 							"for your farm. Tool upgrades provide better harvests of seeds or crops",
 							"and replace their less efficient counterparts. Structural upgrades",
-							"provide unique benefits. A Windmill allows you to water all plants"
+							"provide unique benefits. A Windmill allows you to water all plants",
 							"simultaneously regardless of their thirstiness while the windmill is",
 							"spinning (left-click to toggle). A Greenhouse slowly produces random",
 							"seeds. Left-click on the Greenhouse to harvest a mature seed.",				
-							"A Pig Pen gives you unlimited manure for free. Each plant may still"
+							"A Pig Pen gives you unlimited manure for free. Each plant may still",
 							"only be fertilized once during its growth cycle."])
 					return garden_player.Player()
 				elif loadRect.collidepoint(mousex, mousey):
