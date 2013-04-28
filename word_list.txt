@@ -1,4 +1,0 @@
-with open("english_to_spanish_words.py", "r") as rf:
-	with open("modified_list.txt", "w") as wf:
-		for line in rf:
-			wf.write('"' + line)
