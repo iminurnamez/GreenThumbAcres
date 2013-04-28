@@ -153,7 +153,7 @@ class Player(object):
 						self.water_bill, self.manure_bill, self.fert_bill = 0, 0, 0
 						paying = False
 			pygame.draw.rect(surface, Color("antiquewhite"), window) 
-			pygame.draw.rect(surface, Color("gray"), window, 5)
+			pygame.draw.rect(surface, Color("gray50"), window, 5)
 			blit_list = [(title, title_rect), (exit_text, exit_rect), (water, water_rect),
 			(manure, manure_rect), (fert, fert_rect), (total, total_rect), (waternum, waternum_rect),
 			(manurenum, manurenum_rect), (fertnum, fertnum_rect), (totalnum, totalnum_rect)]

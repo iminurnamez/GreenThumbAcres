@@ -71,7 +71,7 @@ def warning_window(surface):
 				elif no_rect.collidepoint(x, y):
 					return False
 		pygame.draw.rect(surface, Color("white"), window)
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		surface.blit(text, text_rect)
 		surface.blit(yes, yes_rect)
 		surface.blit(no, no_rect)
@@ -458,7 +458,7 @@ def finance_screen(surface, screenwidth, left, top, width, height, player, garde
 									contracting = False
 						
 						pygame.draw.rect(surface, Color("white"), window) 
-						pygame.draw.rect(surface, Color("gray"), window, 5)
+						pygame.draw.rect(surface, Color("gray50"), window, 5)
 						for item in blitters:
 							surface.blit(item[0], item[1])
 						pygame.display.update()
@@ -538,7 +538,7 @@ def finance_screen(surface, screenwidth, left, top, width, height, player, garde
 						fpsClock.tick(FPS)
 						
 		pygame.draw.rect(surface, Color("black"), window) 
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		for rect in blit_rects:
 			surface.blit(rect[0], rect[1])
 		surface.blit(exit, exit_rect)
@@ -607,7 +607,7 @@ def seed_screen(surface, left, top, width, height, player, garden, current_plant
 						return current_plant_type
 						
 		pygame.draw.rect(surface, Color("white"), window) 
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		blit_list = [(seed_text, seed_rect), (price_text, price_rect), (inventory_text, inventory_rect),
 			(cash_text, cash_rect), (cash_amount, amount_rect),	(exit_text, exit_rect)]
 		for item in blit_list:
@@ -705,7 +705,7 @@ def market_screen(surface, screenwidth, left, top, width, height, player, garden
 										garden.daily_contracts.remove(item)
 						
 						pygame.draw.rect(surface, Color("white"), window) 
-						pygame.draw.rect(surface, Color("gray"), window, 5)
+						pygame.draw.rect(surface, Color("gray50"), window, 5)
 						for item in blitters:
 							surface.blit(item[0], item[1])
 						pygame.display.update()
@@ -722,7 +722,7 @@ def market_screen(surface, screenwidth, left, top, width, height, player, garden
 						player.crops[crop.name] = 0
 						
 		pygame.draw.rect(surface, Color("white"), window) 
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		to_blit = [ (crop_text, crop_rect), (price_text, price_rect), (inventory_text, inventory_rect),
 			(qty_text, qty_rect), (cash_text, cash_rect), (cash_amount, amount_rect), (graph, graph_rect),
 			(contract, contract_rect), (exit_text, exit_rect)]
@@ -841,7 +841,7 @@ def upgrade_screen(surface, screenwidth, left, top, width, height, player, garde
 					upgrading = False
 					
 		pygame.draw.rect(surface, Color("white"), window) 
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		for rect in blit_rects:
 			surface.blit(rect[0], rect[1])
 		pygame.display.update()
@@ -865,7 +865,7 @@ def win_screen(surface, player, level):
 				elif replay_rect.collidepoint(x, y):
 					return False
 		pygame.draw.rect(surface, Color("white"), window)
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		surface.blit(line1, line1_rect)
 		surface.blit(cont, cont_rect)
 		surface.blit(replay, replay_rect)
@@ -886,7 +886,7 @@ def fail_screen(surface):
 				if replay_rect.collidepoint(x, y):
 					return False
 		pygame.draw.rect(surface, Color("white"), window)
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		surface.blit(line1, line1_rect)
 		surface.blit(replay, replay_rect)
 		pygame.display.update()
@@ -917,7 +917,7 @@ def goals_screen(surface, level):
 				if exit_rect.collidepoint(x, y):
 					return False
 		pygame.draw.rect(surface, Color("white"), window)
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		for item in blit_rects:
 			surface.blit(item[0], item[1])
 		pygame.display.update()
@@ -952,7 +952,7 @@ def menu_screen(surface, left, top, width, height, player):
 				elif leave_rect.collidepoint(x, y):
 					return 
 		pygame.draw.rect(surface, Color("white"), window)
-		pygame.draw.rect(surface, Color("gray"), window, 5)
+		pygame.draw.rect(surface, Color("gray50"), window, 5)
 		surface.blit(save, save_rect)
 		surface.blit(music_text, music_rect)
 		surface.blit(leave, leave_rect)
@@ -999,18 +999,18 @@ def level_loop(player):
 		tool.Rect.topleft = (horiz, SCREENHEIGHT - tool.Rect.height - 10) 
 		tool.surface.blit(tool.image, (0, 0))
 		horiz += tool.Rect.width + 20
-	market_text = text16.render("Market", True, Color("blue"), Color("gray"))
+	market_text = text16.render("Market", True, Color("blue"), Color("gray60"))
 	market_rect = market_text.get_rect(topleft = (shovel.Rect.right + 70, shovel.Rect.top + 10))
-	seeds_text = text16.render("Seeds", True, Color("blue"), Color("gray"))
-	seeds_rect = market_text.get_rect(topleft = (market_rect.left, market_rect.bottom + 10))
-	finance_text = text16.render("Finance", True, Color("blue"), Color("gray"))
+	seeds_text = text16.render("Seeds", True, Color("blue"), Color("gray60"))
+	seeds_rect = market_text.get_rect(midtop = (market_rect.centerx, market_rect.bottom + 10))
+	finance_text = text16.render("Finance", True, Color("blue"), Color("gray60"))
 	finance_rect = finance_text.get_rect(topleft = (market_rect.right + 30, market_rect.top))
-	upgrade_text = text16.render("Upgrades", True, Color("blue"), Color("gray"))
-	upgrade_rect = upgrade_text.get_rect(topleft = (market_rect.right + 30, finance_rect.bottom + 10))
-	goal_text = text16.render("Goals", True, Color("blue"), Color("gray"))
-	goal_rect = goal_text.get_rect(topleft = (finance_rect.right + 20, finance_rect.top))
-	menu_text = text16.render("Menu", True, Color("blue"), Color("gray"))
-	menu_rect = menu_text.get_rect(topleft = (goal_rect.left, seeds_rect.top))
+	upgrade_text = text16.render("Upgrades", True, Color("blue"), Color("gray60"))
+	upgrade_rect = upgrade_text.get_rect(midtop = (finance_rect.centerx, finance_rect.bottom + 10))
+	goal_text = text16.render("Goals", True, Color("blue"), Color("gray60"))
+	goal_rect = goal_text.get_rect(topleft = (finance_rect.right + 30, finance_rect.top))
+	menu_text = text16.render("Options", True, Color("blue"), Color("gray60"))
+	menu_rect = menu_text.get_rect(midtop = (goal_rect.centerx, seeds_rect.top))
 	road1 = pygame.image.load(os.path.join("Art", "cobble_path.png")).convert()
 	road1_rect = road1.get_rect(topleft = (160, 280))
 	road2 = pygame.image.load(os.path.join("Art", "cobble_path.png")).convert()
@@ -1136,7 +1136,7 @@ def level_loop(player):
 		SURF.fill(Color(157, 187, 97))
 		show_economy(SURF, garden, player)
 		show_weather(SURF, 285, garden)
-		hud(SURF, SCREENWIDTH, SCREENHEIGHT, Color("gray"), Color("white"), Color("lightgray"), shovel.Rect.right)
+		hud(SURF, SCREENWIDTH, SCREENHEIGHT, Color("gray50"), Color("white"), Color("lightgray"), shovel.Rect.right)
 		print_news(SURF, garden)
 		dirty_rects = [(market_text, market_rect),(seeds_text, seeds_rect),(finance_text, finance_rect),
 			(upgrade_text, upgrade_rect),(goal_text, goal_rect), (menu_text, menu_rect),(fence1, fence1_rect),(fence2, fence2_rect),
