@@ -112,4 +112,4 @@ class Level10(Level):
 		return player.cash >= 10000 and garden.has_pigpen and (player.fund_sales - player.fund_purchases) >= 500
 			
 level_map = {
-	1: Level1, 2: Level2, 3: Level3, 4: Level4, 5: Level5, 6: Level6, 7: Level7, 8: Level8}
+	1: Level1, 2: Level2, 3: Level3, 4: Level4, 5: Level5, 6: Level6, 7: Level7, 8: Level8, 9: Level9, 10: Level10}
