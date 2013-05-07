@@ -1216,7 +1216,7 @@ def new_game_screen():
 					welcome(DISPLAYSURF, "Contracts", [
 							"Contracts are an agreement for you to provide a certain quantity of",
 							"a crop on a specific date. Failure to fulfill the contract will result",
-							"in a penalty of 10% of the contract value. Available contratcs change",
+							"in a penalty of 10% of the contract value. Available contracts change",
 							"daily and can be found through the Market menu."])
 					welcome(DISPLAYSURF, "Index Funds", [
 							"Index Funds are investment instruments based on the average value of",
@@ -1279,5 +1279,6 @@ def main(player):
 		player = garden_player.Player()
 		player.level = level_holder
 		level_loop(player)
-		
-main(new_game_screen())
+
+if __name__ == "__main__":		
+	main(new_game_screen())
